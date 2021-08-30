@@ -12,6 +12,9 @@ from fastapi import FastAPI
 
 app = FastAPI()
 
+from app.registration_service import route
+app.include_router(route.router)
+
 
 @app.get("/")
 async def root():
